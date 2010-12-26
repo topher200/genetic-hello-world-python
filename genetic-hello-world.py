@@ -12,13 +12,14 @@ class GeneticHelloWorld():
 
     Tests assume that 'Hello World!' is the target string.
     TODO(topher): this restriction could be removed
-    >>> fitness('Hello World!')
+    >>> ghw = GeneticHelloWorld()
+    >>> ghw.fitness('Hello World!')
     0
-    >>> fitness('Iello World!')
+    >>> ghw.fitness('Iello World!')
     1
-    >>> fitness('Iallo World!')
+    >>> ghw.fitness('Iallo World!')
     5
-    >>> fitness('Hello!')
+    >>> ghw.fitness('Hello!')
     Traceback (most recent call last):
     except ValueError: input chromo length doesn't match target
     '''
