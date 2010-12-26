@@ -4,6 +4,9 @@ class GeneticHelloWorld():
 
 
   def fitness(self, chromo):
+    ''' Fitness of a chromo is the sum of how far each of its charactors is
+    from the target string.
+    '''
     pass
 
 
