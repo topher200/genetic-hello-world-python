@@ -94,10 +94,9 @@ def main():
     # Generate the solution group by breeding random chromos from selected
     solution = []
     while len(solution) < NUM_SAMPLES:
-      solution.extend((random.choice(selected), random.choice(selected)))
+      solution.extend(breed(random.choice(selected), random.choice(selected)))
               
     sample = sorted(solution, key = fitness)
-    print sample
     # Print useful stats about this generation
     (min, median, max) = map(fitness,
                              [sample[0], sample[len(sample)//2], sample[-1]])
