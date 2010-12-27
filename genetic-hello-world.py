@@ -60,7 +60,10 @@ def breed(a, b):
   ''' Breed two chromosomes by splicng them in a random spot and combining
   them together to form two new chromos.
   '''
-  pass
+  splice_pos = random.randrange(len(a))
+  new_a = a[:splice_pos] + b[splice_pos:]
+  new_b = b[:splice_pos] + a[splice_pos:]
+  return new_a, new_b
 
 
 def mutate(chromo):
@@ -81,6 +84,10 @@ def main():
   f = fitness(sample[0])
   print sample[0], f
   print tourny_select_chromo(sample)
+  a = sample[0]
+  b = sample[1]
+  print a,b
+  print breed(a,b)
 
 
 if __name__ == "__main__":
