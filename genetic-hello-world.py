@@ -24,7 +24,6 @@ def fitness(chromo):
   fitness is better than higher.
 
   Tests assume that 'Hello World!' is the target string.
-  TODO(topher): this restriction could be removed
   >>> fitness('Hello World!')
   0
   >>> fitness('Iello World!')
@@ -33,9 +32,12 @@ def fitness(chromo):
   5
   >>> fitness('Hello!')
   Traceback (most recent call last):
-  except ValueError: input chromo length doesn't match target
+    ...
+  ValueError: input chromo length doesn't match target
   '''
-  pass
+  if len(chromo) != len(TARGET):
+    raise ValueError("input chromo length doesn't match target")
+  return -1
 
 
 def tourny_select_chromo():
@@ -67,7 +69,8 @@ def main():
   #   print the best, worst, and average fitness, and the chromo with best
   #   stop loop if best fitness == 0
   sample = generate_random_chromosomes()
-  print sample
+  f = fitness('a')
+  print sample[0], f
 
 
 if __name__ == "__main__":
