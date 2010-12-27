@@ -92,9 +92,9 @@ def main():
   print sample, fitness(sample[0])
   for s in sample:
     print fitness(s), s
-  print "{0} best string: {1}. fitness: max {2}, min {3}, median {4}".format(
+  print "{0} best string: {1}. fitness: best {2}, median {3}, worst {4}".format(
     generation, sample[0], 
-    *(map(fitness, [sample[0], sample[-1], sample[len(sample)//2]])))
+    *(map(fitness, [sample[0], sample[len(sample)//2], sample[-1]])))
 
 
 if __name__ == "__main__":
