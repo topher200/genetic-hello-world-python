@@ -82,8 +82,9 @@ def main():
   sample = generate_random_chromosomes()
 
   # Main loop: each generation select a subset of the sample and breed from them.
-  generation = 0
+  generation = -1
   while fitness(sample[0]) != 0:
+    generation += 1
     # Generate the selected group from the sample
     selected = []
     while len(selected) < NUM_SELECTED:
@@ -104,8 +105,9 @@ def main():
                              [sample[0], sample[len(sample)//2], sample[-1]])
     print("{0} best string: {1}. fitness: best {2}, median {3}, worst {4}" \
             .format(generation, sample[0], min, median, max))
-    generation += 1
+
+  return generation
 
 
 if __name__ == "__main__":
-  main()
+  print "Took {0} generations".format(main())
