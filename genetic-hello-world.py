@@ -37,7 +37,11 @@ def fitness(chromo):
   '''
   if len(chromo) != len(TARGET):
     raise ValueError("input chromo length doesn't match target")
-  return -1
+
+  total_fitness = 0
+  for i, char in enumerate(chromo):
+    total_fitness += abs(ord(char) - ord(TARGET[i]))
+  return total_fitness
 
 
 def tourny_select_chromo():
