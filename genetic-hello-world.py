@@ -74,7 +74,7 @@ def mutate(chromo):
   ''' Mutate a chromosome by changing a random char to a different letter.
   '''
   pos = random.randrange(len(chromo))
-  return chromo[:pos] + random.choice(LETTERS) + chromo[pos+1:]
+  return random.choice(LETTERS).join( [chromo[:pos], chromo[pos+1:]] )
 
 
 def main():
