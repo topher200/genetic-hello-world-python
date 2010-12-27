@@ -5,6 +5,7 @@ TARGET = "Hello World!"
 NUM_SAMPLES = 1000
 NUM_SELECTED = 100
 LETTERS = string.ascii_letters + ' '
+MUTATION_FACTOR =  # Will perform a mutation on every MUTATION_FACTOR solutions
 
 def generate_random_chromosomes():
   chromos = []
@@ -68,8 +69,7 @@ def breed(a, b):
 
 
 def mutate(chromo):
-  ''' Mutate a chromosome by changing a random char in the string by a small
-  amount.
+  ''' Mutate a chromosome by changing a random char to a different letter.
   '''
   pass
 
@@ -95,6 +95,10 @@ def main():
     solution = []
     while len(solution) < NUM_SAMPLES:
       solution.extend(breed(random.choice(selected), random.choice(selected)))
+
+    # Apply a mutation to a subset of the solution set
+    for i, chromo in solution[::MUTATION_FACTOR]:
+      solution[i] = mutate(solution[i])
               
     sample = sorted(solution, key = fitness)
     # Print useful stats about this generation
