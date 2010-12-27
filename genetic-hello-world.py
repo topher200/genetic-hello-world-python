@@ -44,11 +44,16 @@ def fitness(chromo):
   return total_fitness
 
 
-def tourny_select_chromo():
+def tourny_select_chromo(samples):
   ''' Randomly select two chromosomes from the samples, then returns the one
-  with the highest fitness.
+  with the best fitness.
   '''
-  pass
+  a = random.choice(samples)
+  b = random.choice(samples)
+  if fitness(a) < fitness(b):
+    return a
+  else:
+    return b
 
 
 def breed(a, b):
@@ -75,6 +80,7 @@ def main():
   sample = generate_random_chromosomes()
   f = fitness(sample[0])
   print sample[0], f
+  print tourny_select_chromo(sample)
 
 
 if __name__ == "__main__":
