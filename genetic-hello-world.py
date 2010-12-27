@@ -74,27 +74,34 @@ def mutate(chromo):
 
 
 def main():
-  # Create a random sample
   # for each generation
   #   create a selected group with tourny_select_chromo() until we have enough
   #   create a solution group by breeding random chromos in selected group
   #   print the best, worst, and average fitness, and the chromo with best
   #   stop loop if best fitness == 0
+
+  # Create a random sample of chromos
   sample = generate_random_chromosomes()
-  f = fitness(sample[0])
-  print sample[0], f
-  print tourny_select_chromo(sample)
-  a = sample[0]
-  b = sample[1]
-  print a,b
-  print breed(a,b)
-  sample.sort(key = fitness)
-  print sample, fitness(sample[0])
-  for s in sample:
-    print fitness(s), s
-  print "{0} best string: {1}. fitness: best {2}, median {3}, worst {4}".format(
-    generation, sample[0], 
-    *(map(fitness, [sample[0], sample[len(sample)//2], sample[-1]])))
+
+  generation = 0
+  while fitness(sample[0]) != 0:
+    # Generate the selected group from the sample
+    selected = []
+    while len(selected) < NUM_SELECTED:
+      selected.extend(tourny_select_chromo(sample))
+
+    # Generate the solution group by breeding random chromos from selected
+    solution = []
+    while len(solution) < NUM_SAMPLES:
+      solution.extend((random.choice(selected), random.choice(selected)))
+              
+    solution.sort(key = fitness)
+    # Print useful stats about this generation
+    (min, median, max) = map(fitness,
+                             [sample[0], sample[len(sample)//2], sample[-1]])
+    print("{0} best string: {1}. fitness: best {2}, median {3}, worst {4}" \
+            .format(generation, sample[0], min, median, max))
+    generation += 1
 
 
 if __name__ == "__main__":
