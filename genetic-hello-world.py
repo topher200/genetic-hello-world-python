@@ -1,4 +1,8 @@
 class GeneticHelloWorld():
+  def __init__(self):
+    self.target = "Hello World!"
+
+
   def generate_random_chromosomes(self):
     pass
 
@@ -27,12 +31,33 @@ class GeneticHelloWorld():
 
 
   def tourny_select_chromo(self):
+    ''' Randomly select two chromosomes from the samples, then returns the one
+    with the highest fitness.
+    '''
     pass
 
 
   def breed(self, a, b):
+    ''' Breed two chromosomes by splicng them in a random spot and combining
+    them together to form two new chromos.
+    '''
     pass
 
 
   def mutate(self, chromo):
+    ''' Mutate a chromosome by changing a random char in the string by a small
+    amount.
+    '''
+    pass
+
+
+  def main(self):
+    # Create a random sample
+    # for each generation
+    #   create a selected group with tourny_select_chromo() until we have enough
+    #   create a solution group by breeding random chromos in selected group
+    #   print the best, worst, and average fitness, and the chromo with best
+    #   stop loop if best fitness == 0
+
+
     pass
