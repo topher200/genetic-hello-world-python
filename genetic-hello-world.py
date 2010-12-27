@@ -36,6 +36,7 @@ def fitness(chromo):
   ValueError: input chromo length doesn't match target
   '''
   if len(chromo) != len(TARGET):
+    print chromo
     raise ValueError("input chromo length doesn't match target")
 
   total_fitness = 0
@@ -88,14 +89,15 @@ def main():
     # Generate the selected group from the sample
     selected = []
     while len(selected) < NUM_SELECTED:
-      selected.extend(tourny_select_chromo(sample))
+      selected.append(tourny_select_chromo(sample))
 
     # Generate the solution group by breeding random chromos from selected
     solution = []
     while len(solution) < NUM_SAMPLES:
       solution.extend((random.choice(selected), random.choice(selected)))
               
-    solution.sort(key = fitness)
+    sample = sorted(solution, key = fitness)
+    print sample
     # Print useful stats about this generation
     (min, median, max) = map(fitness,
                              [sample[0], sample[len(sample)//2], sample[-1]])
