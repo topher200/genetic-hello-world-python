@@ -71,7 +71,8 @@ def breed(a, b):
 def mutate(chromo):
   ''' Mutate a chromosome by changing a random char to a different letter.
   '''
-  pass
+  pos = random.randrange(len(chromo))
+  return chromo[:pos] + random.choice(LETTERS) + chromo[pos+1:]
 
 
 def main():
@@ -97,7 +98,7 @@ def main():
       solution.extend(breed(random.choice(selected), random.choice(selected)))
 
     # Apply a mutation to a subset of the solution set
-    for i, chromo in solution[::MUTATION_FACTOR]:
+    for i, chromo in enumerate(solution[::MUTATION_FACTOR]):
       solution[i] = mutate(solution[i])
               
     sample = sorted(solution, key = fitness)
