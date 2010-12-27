@@ -2,12 +2,14 @@ import string
 import random
 
 TARGET = "Hello World!"
-NUM_SAMPLES = 1000
-NUM_SELECTED = 100
 LETTERS = string.ascii_letters + ' ' + '!'
-MUTATION_FACTOR = 100  # Will perform a mutation every MUTATION_FACTOR solutions
+NUM_SAMPLES = 1000  # Number of chromosomes to generate from breeding
+NUM_SELECTED = 100  # Number of chromosomes to select for breeding
+MUTATION_FACTOR = 10  # Will perform a mutation every MUTATION_FACTOR solutions
 
 def generate_random_chromosomes():
+  ''' Create a list of random chromosomes to seed our alogrithm.
+  '''
   chromos = []
   while len(chromos) < NUM_SAMPLES:
     new_chromo = ''
@@ -47,7 +49,7 @@ def fitness(chromo):
 
 
 def tourny_select_chromo(samples):
-  ''' Randomly select two chromosomes from the samples, then returns the one
+  ''' Randomly select two chromosomes from the samples, then return the one
   with the best fitness.
   '''
   a = random.choice(samples)
@@ -76,15 +78,10 @@ def mutate(chromo):
 
 
 def main():
-  # for each generation
-  #   create a selected group with tourny_select_chromo() until we have enough
-  #   create a solution group by breeding random chromos in selected group
-  #   print the best, worst, and average fitness, and the chromo with best
-  #   stop loop if best fitness == 0
-
   # Create a random sample of chromos
   sample = generate_random_chromosomes()
 
+  # Main loop: each generation select a subset of the sample and breed from them.
   generation = 0
   while fitness(sample[0]) != 0:
     # Generate the selected group from the sample
