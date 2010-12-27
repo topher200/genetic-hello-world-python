@@ -88,6 +88,13 @@ def main():
   b = sample[1]
   print a,b
   print breed(a,b)
+  sample.sort(key = fitness)
+  print sample, fitness(sample[0])
+  for s in sample:
+    print fitness(s), s
+  print "{0} best string: {1}. fitness: max {2}, min {3}, median {4}".format(
+    generation, sample[0], 
+    *(map(fitness, [sample[0], sample[-1], sample[len(sample)//2]])))
 
 
 if __name__ == "__main__":
