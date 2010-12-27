@@ -4,8 +4,8 @@ import random
 TARGET = "Hello World!"
 NUM_SAMPLES = 1000
 NUM_SELECTED = 100
-LETTERS = string.ascii_letters + ' '
-MUTATION_FACTOR =  # Will perform a mutation on every MUTATION_FACTOR solutions
+LETTERS = string.ascii_letters + ' ' + '!'
+MUTATION_FACTOR = 100  # Will perform a mutation every MUTATION_FACTOR solutions
 
 def generate_random_chromosomes():
   chromos = []
