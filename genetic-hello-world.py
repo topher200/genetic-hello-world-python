@@ -1,8 +1,9 @@
+TARGET = "Hello World!"
+NUM_SAMPLES = 1000
+NUM_SELECTED = 100
+
+
 class GeneticHelloWorld():
-  def __init__(self):
-    self.target = "Hello World!"
-
-
   def generate_random_chromosomes(self):
     pass
 
