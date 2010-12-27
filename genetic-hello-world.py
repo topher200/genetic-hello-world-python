@@ -73,7 +73,7 @@ def main():
   #   print the best, worst, and average fitness, and the chromo with best
   #   stop loop if best fitness == 0
   sample = generate_random_chromosomes()
-  f = fitness('a')
+  f = fitness(sample[0])
   print sample[0], f
 
 
