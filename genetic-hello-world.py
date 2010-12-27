@@ -1,10 +1,19 @@
+import string
+import random
+
 TARGET = "Hello World!"
 NUM_SAMPLES = 1000
 NUM_SELECTED = 100
-
+LETTERS = string.ascii_letters + ' '
 
 def generate_random_chromosomes():
-  pass
+  chromos = []
+  while len(chromos) < NUM_SAMPLES:
+    new_chromo = ''
+    while len(new_chromo) < len(TARGET):
+      new_chromo += random.choice(LETTERS)
+    chromos.append(new_chromo)
+  return chromos
 
 
 def fitness(chromo):
@@ -57,8 +66,9 @@ def main():
   #   create a solution group by breeding random chromos in selected group
   #   print the best, worst, and average fitness, and the chromo with best
   #   stop loop if best fitness == 0
-  pass
+  sample = generate_random_chromosomes()
+  print sample
 
 
-if __name__ is "__main__":
+if __name__ == "__main__":
   main()
