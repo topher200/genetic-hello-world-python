@@ -2,7 +2,7 @@ import string
 import random
 
 TARGET = "Hello World!"
-LETTERS = string.ascii_letters + ' ' + '!'
+LETTERS = string.ascii_letters + ' ' + '!' + '?'
 NUM_SAMPLES = 1000  # Number of chromosomes to generate from breeding
 NUM_SELECTED = 100  # Number of chromosomes to select for breeding
 MUTATION_FACTOR = 10  # Will perform a mutation every MUTATION_FACTOR solutions
