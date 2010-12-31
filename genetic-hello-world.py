@@ -83,12 +83,13 @@ class GeneticHelloWorld(object):
     # Create a random sample of chromos
     sample = self.generate_random_chromosomes()
 
-    # Main loop: each generation select a subset of the sample and breed from them.
+    # Main loop: each generation select a subset of the sample and breed from
+    # them.
     generation = -1
     while self.fitness(sample[0]) != 0:
       generation += 1
-      # Generate the selected group from sample- take the top 10% of samples and
-      # tourny select to generate the rest of selected.
+      # Generate the selected group from sample- take the top 10% of samples
+      # and tourny select to generate the rest of selected.
       ten_percent = int(len(sample)*.1)
       selected = sample[:ten_percent]
       while len(selected) < self.num_selected:
@@ -97,7 +98,8 @@ class GeneticHelloWorld(object):
       # Generate the solution group by breeding random chromos from selected
       solution = []
       while len(solution) < self.num_samples:
-        solution.extend(self.breed(random.choice(selected), random.choice(selected)))
+        solution.extend(self.breed(random.choice(selected),
+                                   random.choice(selected)))
 
       # Apply a mutation to a subset of the solution set
       for i, chromo in enumerate(solution[::self.mutation_factor]):
