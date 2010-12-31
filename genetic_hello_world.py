@@ -79,7 +79,7 @@ class GeneticHelloWorld(object):
     return random.choice(LETTERS).join( [chromo[:pos], chromo[pos+1:]] )
 
 
-  def main(self):
+  def run(self):
     # Create a random sample of chromos
     sample = self.generate_random_chromosomes()
 
@@ -117,4 +117,4 @@ class GeneticHelloWorld(object):
 
 if __name__ == "__main__":
   ghw = GeneticHelloWorld()
-  print "Took {0} generations".format(ghw.main())
+  print "Took {0} generations".format(ghw.run())
