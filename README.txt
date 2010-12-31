@@ -1,6 +1,5 @@
 Introduction
-	Uses genetic algorithms to go from a list of random strings to our target:
-	"Hello World!".
+	Uses an genetic algorithm to go from a list of random strings to our target.
 
 	1. Creates a list of random strings with generate_random_chromosomes(),
 	called 'samples.'
@@ -17,4 +16,14 @@ Introduction
 
 	4. Repeat steps 2 and 3, with each generated solution set becoming the new
 	generation of samples. Do this until a generation has a solution of fitness
-	of 0 (matches 'Hello World!').
+	of 0 (matches our target).
+
+Usage
+
+
+Changelog
+  v1.0: Initial release.
+
+
+License
+
