@@ -5,8 +5,10 @@ Introduction
 	1. Creates a list of random strings with generate_random_chromosomes(),
 	called 'samples.'
 
-	2. Selects a subset of the samples by selecting two at a time, and adding
-	the one with highest fitness to the 'selected' group.
+	2. Selects a subset of the samples to create a 'selected' group. First takes
+	the top 10% samples (elitism), then uses tourny select to find the
+	rest. Tourny select works by selecting two random samples, and using the
+	one with the highest fitness score.
 
 	3. Creates a 'solution' group by randomly taking two chromosomes from the
 	selected group and breeding (combining) these together. Periodically, a

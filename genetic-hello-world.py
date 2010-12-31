@@ -85,8 +85,10 @@ def main():
   generation = -1
   while fitness(sample[0]) != 0:
     generation += 1
-    # Generate the selected group from the sample
-    selected = []
+    # Generate the selected group from sample- take the top 10% of samples and
+    # tourny select to generate the rest of selected.
+    ten_percent = int(len(sample)*.1)
+    selected = sample[:ten_percent]
     while len(selected) < NUM_SELECTED:
       selected.append(tourny_select_chromo(sample))
 
