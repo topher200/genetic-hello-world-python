@@ -22,11 +22,22 @@
 
 
 ## Usage
+	# Set your parameters (taken from __init__ defaults)
+  target = "Hello World!"  # Target string we're going for
+  num_samples = 1000       # Have 1000 chromos in the sample group
+  num_selected = 100       # Have 100 chromos in the selected group
+  mutation_factor = 10     # Mutate every 10 chromosomes
+  ghw = genetic_hello_world.GeneticHelloWorld(
+	  target, num_samples, num_selected, mutation_factor)
+		
+	# Run the script until the target is found
+  ghw.run()
 
 
 ## Changelog
-  v1.0: Initial release.
+  v1.00: Initial release.
 
 
 ## License
-
+  Copyright Topher Brown <topher200@gmail.com>, 2010. Released under the MIT 
+	license.
