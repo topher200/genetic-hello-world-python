@@ -34,7 +34,9 @@
   ghw.run()
 
 
-## Changelog
+## Changelog 
+  v1.01: Made a GeneticHelloWorld class that allows the user to customize the 
+    program using parameters to __init__. Uses same defaults as before.
   v1.00: Initial release.
 
 
