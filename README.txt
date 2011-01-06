@@ -40,6 +40,11 @@
   v1.00: Initial release.
 
 
+## Inspiration
+  Idea and algorithm inspired completely by Howard Yeend's blog post 
+  at http://www.puremango.co.uk/2010/12/genetic-algorithm-for-hello-world/ .
+
+
 ## License
   Copyright Topher Brown <topher200@gmail.com>, 2010. Released under the MIT 
 	license.
