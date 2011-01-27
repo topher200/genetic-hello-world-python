@@ -88,12 +88,12 @@ class GeneticHelloWorld(object):
     generation = -1
     while self.fitness(sample[0]) != 0:
       generation += 1
-      # Generate the selected group from sample- take the top 10% of samples
+      # Generate the selected group from sample- take the top 1% of samples
       # and tourny select to generate the rest of selected.
-      ten_percent = int(len(sample)*.1)
+      ten_percent = int(len(sample)*.01)
       selected = sample[:ten_percent]
       while len(selected) < self.num_selected:
-        selected.append(tourny_select_chromo(sample))
+        selected.append(self.tourny_select_chromo(sample))
 
       # Generate the solution group by breeding random chromos from selected
       solution = []
