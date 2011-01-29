@@ -116,7 +116,11 @@ class GeneticHelloWorld(object):
 
     return generation
 
-
-if __name__ == "__main__":
+  
+def main():
   ghw = GeneticHelloWorld()
   print "Took {0} generations".format(ghw.run())
+
+
+if __name__ == "__main__":
+  main() 
