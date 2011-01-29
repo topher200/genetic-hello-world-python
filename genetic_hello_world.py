@@ -7,7 +7,7 @@ LETTERS = string.ascii_letters + ' ' + '!' + '?'
 
 class GeneticHelloWorld(object):
   def __init__(self, 
-               target = "Hello World!",  # Target string we're going for
+               target = "Hello Python World!",  # Target string we're going for
                num_samples = 1000,  # Have 1000 chromos in the sample group
                num_selected = 100,  # Have 100 chromos in the selected group
                mutation_factor = 10,):  # Mutate every 10 chromosomes
