@@ -45,6 +45,8 @@
 ## Inspiration
   Idea and algorithm inspired completely by Howard Yeend's blog post 
   at http://www.puremango.co.uk/2010/12/genetic-algorithm-for-hello-world/ .
+  I have also created a Clojure version, available at 
+  https://github.com/topher200/genetic-hello-world-clojure .
 
 
 ## License
