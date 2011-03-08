@@ -22,6 +22,8 @@
 
 
 ## Usage
+  import genetic_hello_world
+
   # Set your parameters (taken from __init__ defaults)
   target = "Hello World!"  # Target string we're going for
   num_samples = 1000       # Have 1000 chromos in the sample group
