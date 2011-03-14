@@ -1,4 +1,4 @@
-# Genetic Algorthm Hello World
+# Genetic Hello World
 
 ## Introduction
   Uses an genetic algorithm to go from a list of random strings to our target.
